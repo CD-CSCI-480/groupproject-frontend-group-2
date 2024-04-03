@@ -17,30 +17,18 @@ class MainMenu extends React.Component {
           <View style={styles.title}>
             <QuantumCheckersTitle />
           </View>
-          {/* QC Image */}
-          <View style={styles.imageContainer}>
-            <Image
-              source={require('../../../assets/QuantumCheckersIcon_Black.png')}
-              style={styles.image}
-            />
-          </View>
           {/* Menu Buttons */}
           <View style={styles.buttons}>
             {/* Start Game Button */}
             <View style={styles.button}>
-              <Button text="Start Game" destination="mainmenu.tsx" />
+              <Link href={'/(start-game)'} asChild>
+                <Button text="Level 1" />
+              </Link>
             </View>
             {/* Level Select Button */}
-            <Button text="Level Select" destination="src/app/(levelselect)/levelselect.tsx" />
-          </View>
-          {/* Icon Images using IconButton component */}
-          <View style={styles.iconsContainer}>
-            {/* Accounts Icon Button */}
-            <IconButton iconSource={require('../../../assets/white_accounts_icon.png')} />
-            {/* Info Icon Button*/}
-            <IconButton iconSource={require('../../../assets/white_info_icon.png')} />
-            {/* Settings Icon Button*/}
-            <IconButton iconSource={require('../../../assets/white_settings_icon.png')} />
+            <Link href={'/(level-select)'} asChild>
+              <Button text="Level 2" />
+            </Link>
           </View>
         </View>
       </ImageBackground>

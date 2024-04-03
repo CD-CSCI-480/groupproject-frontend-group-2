@@ -1,22 +1,28 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { forwardRef } from 'react';
+import React from 'react';
+import { StyleSheet, Text, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 type ButtonProps = {
   text: string;
-} & React.ComponentPropsWithoutRef<typeof Pressable>;
+  destination: string;
+};
 
-const Button = forwardRef<View | null, ButtonProps>(
-  ({ text, ...pressableProps }, ref) => {
-    return (
-      <Pressable ref={ref} {...pressableProps} style={styles.container}>
-        <Text style={styles.text}>{text}</Text>
-      </Pressable>
-    );
-  }
-);
+const Button: React.FC<ButtonProps> = ({ text, destination }) => {
+  const navigation = useNavigation();
+
+  const handlePress = () => {
+    navigation.navigate(destination);
+  };
+
+  return (
+    <Pressable onPress={handlePress} style={styles.button}>
+      <Text style={styles.text}>{text}</Text>
+    </Pressable>
+  );
+};
 
 const styles = StyleSheet.create({
-  container: {
+  button: {
     backgroundColor: '#9E451F',
     padding: 15,
     alignItems: 'center',
@@ -24,7 +30,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   text: {
-    fontSize: 28,
+    fontSize: 18,
     fontWeight: 'bold',
     color: 'white',
   },

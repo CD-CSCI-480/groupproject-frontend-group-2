@@ -1,57 +1,59 @@
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
 import { Link } from 'expo-router';
-import Button from '../src/components/Button.tsx';
-import IconButton from '../src/components/IconButton.tsx'; // Import the IconButton component
-import QuantumCheckersTitle from '../src/components/QuantumCheckersTitle.tsx';
+import React from 'react';
+import Button from '../../components/Button';
+import IconButton from '../../components/IconButton'; // Import the IconButton component
+import QuantumCheckersTitle from '../../components/QuantumCheckersTitle';
 
-export default function App() {
-  return (
-    <ImageBackground // Use ImageBackground instead of View
-      source={require('./assets/background.jpg')} // Set your image path here
-      style={styles.container} // Apply styles to ImageBackground
-    >
-      <View style={styles.container}>
-
-        {/* Title */}
-        <View style={styles.title}>
-          <QuantumCheckersTitle />
-        </View>
-
-        {/* QC Image */}
-        <View style={styles.imageContainer}>
-          <Image
-            source={require('./assets/QuantumCheckersIcon_Black.png')}
-            style={styles.image}
-          />
-        </View>
-
-        {/* Menu Buttons */}
-        <View style={styles.buttons}>
-          {/* Start Game Button */}
-          <View style={styles.button}>
-            <Link href={'/(start-game)'} asChild>
-              <Button text="Start Game" />
+class MainMenu extends React.Component {
+  render() {
+    return (
+      <ImageBackground
+      source={require('../../../assets/background.jpg')}
+        style={styles.container}
+      >
+        <View style={styles.container}>
+          {/* Title */}
+          <View style={styles.title}>
+            <QuantumCheckersTitle />
+          </View>
+          {/* QC Image */}
+          <View style={styles.imageContainer}>
+            <Image
+              source={require('../../../assets/QuantumCheckersIcon_Black.png')}
+              style={styles.image}
+            />
+          </View>
+          {/* Menu Buttons */}
+          <View style={styles.buttons}>
+            {/* Start Game Button */}
+            <View style={styles.button}>
+              <Link href={'/(start-game)'} asChild>
+                <Button text="Start Game" />
+              </Link>
+            </View>
+            {/* Level Select Button */}
+            <Link href={'/(level-select)'} asChild>
+              <Button text="Level Select" />
             </Link>
           </View>
-          {/* Level Select Button */}
-          <Link href={'/(level-select)'} asChild>
-            <Button text="Level Select" />
-          </Link>
+          {/* Icon Images using IconButton component */}
+          <View style={styles.iconsContainer}>
+            {/* Accounts Icon Button */}
+            <IconButton iconSource={require('../../../assets/white_accounts_icon.png')} />
+            {/* Info Icon Button*/}
+            <IconButton iconSource={require('../../../assets/white_info_icon.png')} />
+            {/* Settings Icon Button*/}
+            <IconButton iconSource={require('../../../assets/white_settings_icon.png')} />
+          </View>
         </View>
-
-        {/* Icon Images using IconButton component */}
-        <View style={styles.iconsContainer}>
-          {/* Accounts Icon Button */}
-          <IconButton iconSource={require('./assets/white_accounts_icon.png')} />
-          {/* Info Icon Button*/}
-          <IconButton iconSource={require('./assets/white_info_icon.png')} />
-          {/* Settings Icon Button*/}
-          <IconButton iconSource={require('./assets/white_settings_icon.png')} />
-        </View>
-      </View>
-    </ImageBackground>
-  );
+      </ImageBackground>
+    );
+  }
 }
+
+export default MainMenu;
+
 
 const styles = StyleSheet.create({
   container: {

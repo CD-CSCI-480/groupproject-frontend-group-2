@@ -6,7 +6,7 @@ import AuthScreen from "./src/app/(auth)/authscreen";
 export default function App() {
   return (
     <View style={styles.container}>
-      <MainMenu />
+      <AuthScreen />
     </View>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
 import { Link } from 'expo-router';
 import Button from '../../components/Button';
+import IconButton from '../../components/IconButton'; // Import the IconButton component
 import QuantumCheckersTitle from '../../components/QuantumCheckersTitle';
 
 class AuthScreen extends React.Component {
@@ -37,11 +38,10 @@ class AuthScreen extends React.Component {
               </Link>
           </View>
 
-          <View style={styles.backButton}>
-            {/* Back Button */}
-            <Link href={'/(mainmenu)'} asChild>
-                <Button text="Back" />
-            </Link>
+          {/* Back Button */}
+          <View style={styles.iconsContainer}>
+            {/* Back Icon Button */}
+            <IconButton iconSource={require('../../../assets/back_button_icon.png')} />
           </View>
   
         </View>
@@ -70,14 +70,11 @@ const styles = StyleSheet.create({
   },
   buttons: {
     flex: 1, // Each part takes up an equal amount of space
-    padding: 15,
-    justifyContent: 'center', // Center the buttons vertically
+    justifyContent: 'space-evenly', // Distribute space evenly between buttons
     alignItems: 'center', // Center buttons horizontally
   },
-  backButton: {
-   justifyContent: 'center', // Center the buttons vertically
-   alignItems: 'center', // Center buttons horizontally
-   paddingBottom: 30,
+  iconsContainer: {
+    paddingBottom: 30, // Add padding to the bottom of the icons container
   },
 })
 

@@ -19,10 +19,25 @@ class SettingsScreen extends React.Component {
           </View>
           
           {/* Menu Buttons */}
-          <View style={styles.buttons}>
-            <Text>Testing Settings Screen</Text>
+          <View style={styles.textContainer}>
+            <View style={styles.textInnerContainer}>
+              <Text style={styles.text}>
+                Settings Menu Coming Soon!
+              </Text>
+              
+              <Text style={styles.smallText}>
+                - Button To Reset Scores
+              </Text>
+
+              <Text style={styles.smallText}>
+                - Other Misc. Buttons
+              </Text>
+
+            </View>
           </View>
+
         </View>
+
       </ImageBackground>
     );
   }
@@ -44,25 +59,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center', // Center the title vertically
     paddingBottom: 30, 
   },
-  imageContainer: {
-    flex: 1, // Each part takes up an equal amount of space
-    justifyContent: 'center', // Center the image vertically
+  textContainer: {
+    flex: 1,
+    justifyContent: 'center',
   },
-  image: {
-    width: 300,
-    height: 300,
+  textInnerContainer: {
+    backgroundColor: 'black',
+    borderRadius: 10,
+    padding: 15,
+    marginBottom: 150,
   },
-  buttons: {
-    flex: 1, // Each part takes up an equal amount of space
-    justifyContent: 'center', // Center the buttons vertically
-    alignItems: 'center', // Center buttons horizontally
+  text: {
+    fontSize: 30,
+    color: 'white',
+    textAlign: 'center', // Center align the text
   },
-  button: {
-    paddingBottom: 15, // Add vertical margin between buttons
-  },
-  iconsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center', // Center the images horizontally
-    paddingBottom: 30, // Add padding to the bottom of the icons container
-  },
+  smallText: {
+    fontSize: 20,
+    color: 'white',
+    textAlign: 'center', // Center align the text
+    margin: 20,
+  }
 });

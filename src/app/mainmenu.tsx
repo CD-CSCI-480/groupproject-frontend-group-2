@@ -1,8 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
-import { Link } from 'expo-router';
-import Button from '../components/Button';
-import IconButton from '../components/IconButton'; // Import the IconButton component
+import NavigateButton from '../components/NavigateButton'; // Import the NavigateButton component
 import QuantumCheckersTitle from '../components/QuantumCheckersTitle';
 
 class MainMenu extends React.Component {
@@ -28,14 +26,14 @@ class MainMenu extends React.Component {
           <View style={styles.buttons}>
             {/* Start Game Button */}
             <View style={styles.button}>
-              <Link href={'/(start-game)'} asChild>
-                <Button text="Start Game" />
-              </Link>
+              <View style={styles.button}>
+                <NavigateButton destination="StartGame" buttonText="Start Game" />
+              </View>
             </View>
             {/* Level Select Button */}
-            <Link href={'/(level-select)'} asChild>
-              <Button text="Level Select" />
-            </Link>
+            <View style={styles.button}>
+                <NavigateButton destination="LevelSelect" buttonText="Level Select" />
+            </View>
           </View>
         </View>
       </ImageBackground>

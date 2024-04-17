@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
 import { Link } from 'expo-router';
 import Button from '../components/Button';
-import IconButton from '../components/IconButton'; // Import the IconButton component
+import NavigateButton from '../components/NavigateButton'; // Import the NavigateButton component
 import QuantumCheckersTitle from '../components/QuantumCheckersTitle';
 
 class AuthScreen extends React.Component {
@@ -17,7 +17,7 @@ class AuthScreen extends React.Component {
           {/* Title */}
           <View style={styles.title}>
               <QuantumCheckersTitle />
-            </View>
+          </View>
           {/* QC Image */}
           <View style={styles.imageContainer}>
             <Image
@@ -27,15 +27,15 @@ class AuthScreen extends React.Component {
           </View>
   
           {/* Menu Buttons */}
-          <View style={styles.buttons}>
+          <View style={styles.buttonContainer}>
               {/* Log In Button */}
-               <Link href={'/(log-in)'} asChild>
-               <Button text="Log In" />
-               </Link>
+              <View style={styles.button}>
+                <NavigateButton destination="LogInScreen" buttonText="Log In" />
+              </View>
               {/* Sign Up Button */}
-              <Link href={'/(sign-up)'} asChild>
-                <Button text="Sign Up" />
-              </Link>
+              <View style={styles.button}>
+                <NavigateButton destination="SignUpScreen" buttonText="Sign Up" />
+              </View>
           </View>
         </View>
       </ImageBackground>
@@ -53,6 +53,11 @@ const styles = StyleSheet.create({
     paddingTop: 30, // Add margin to the top of the container
     paddingHorizontal: 20, // Add horizontal padding
   },
+  title: {
+    flex: 0.3, // Each part takes up an equal amount of space
+    justifyContent: 'center', // Center the title vertically
+    paddingBottom: 30, 
+  },
   imageContainer: {
     flex: 1, // Each part takes up an equal amount of space
     justifyContent: 'center', // Center the image vertically
@@ -61,13 +66,14 @@ const styles = StyleSheet.create({
     width: 300,
     height: 300,
   },
-  buttons: {
+  buttonContainer: {
     flex: 1, // Each part takes up an equal amount of space
-    justifyContent: 'space-evenly', // Distribute space evenly between buttons
+    justifyContent: 'space-center', // Distribute space evenly between buttons
     alignItems: 'center', // Center buttons horizontally
+    marginTop: 30,
   },
-  iconsContainer: {
-    paddingBottom: 30, // Add padding to the bottom of the icons container
+  button: {
+    margin: 20,
   },
 })
 

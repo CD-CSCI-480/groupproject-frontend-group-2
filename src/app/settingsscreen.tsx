@@ -1,8 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
-import { Link } from 'expo-router';
-import Button from '../components/Button';
-import IconButton from '../components/IconButton'; // Import the IconButton component
 import QuantumCheckersTitle from '../components/QuantumCheckersTitle';
 
 class SettingsScreen extends React.Component {
@@ -62,21 +59,23 @@ const styles = StyleSheet.create({
   textContainer: {
     flex: 1,
     justifyContent: 'center',
+    borderColor: 'black',
   },
   textInnerContainer: {
-    backgroundColor: 'black',
+    backgroundColor: 'white',
     borderRadius: 10,
     padding: 15,
     marginBottom: 150,
   },
   text: {
-    fontSize: 30,
-    color: 'white',
+    fontSize: 25,
+    color: 'black',
     textAlign: 'center', // Center align the text
+    fontWeight: 'bold',
   },
   smallText: {
     fontSize: 20,
-    color: 'white',
+    color: 'gray',
     textAlign: 'center', // Center align the text
     margin: 20,
   }

@@ -1,7 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
-import { Link } from 'expo-router';
-import Button from '../components/Button';
 import NavigateButton from '../components/NavigateButton'; // Import the NavigateButton component
 import QuantumCheckersTitle from '../components/QuantumCheckersTitle';
 

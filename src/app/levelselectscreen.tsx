@@ -69,7 +69,7 @@ class LevelSelectScreen extends React.Component {
             </View>
          </View>
 
-         {/* Level Select Button */}
+         {/* Back Button */}
          <View style={styles.backButton}>
                 <NavigateButton destination={MainMenu} buttonText="Back" />
          </View>

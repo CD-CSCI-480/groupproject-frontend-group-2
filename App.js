@@ -6,6 +6,8 @@ import MainMenu from './src/app/mainmenu';
 import AuthScreen from './src/app/authscreen';
 import SettingsScreen from './src/app/settingsscreen';
 import LevelSelectScreen from './src/app/levelselectscreen'; 
+import LoginScreen from './src/app/loginscreen';
+import SignupScreen from './src/app/signupscreen';
 
 const Tab = createBottomTabNavigator(); // Bottom Tab Nav
 
@@ -16,6 +18,16 @@ function MainStack() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="MainMenu" component={MainMenu} />
       <Stack.Screen name="LevelSelectScreen" component={LevelSelectScreen} />
+    </Stack.Navigator>
+  );
+}
+
+function AuthStack() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="AuthScreen" component={AuthScreen} />
+      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen name="SignupScreen" component={SignupScreen} />
     </Stack.Navigator>
   );
 }
@@ -51,7 +63,7 @@ export default function App() {
         })}
       >
         <Tab.Screen name='MainStack' component={MainStack} options={{ headerShown: false, tabBarLabel: '' }} />
-        <Tab.Screen name='AuthScreen' component={AuthScreen} options={{ headerShown: false, tabBarLabel: ''}} />
+        <Tab.Screen name='AuthScreen' component={AuthStack} options={{ headerShown: false, tabBarLabel: ''}} />
         <Tab.Screen name='SettingsScreen' component={SettingsScreen} options={{ headerShown: false, tabBarLabel: ''}} />
       </Tab.Navigator>
     </NavigationContainer>

@@ -19,7 +19,7 @@ class AuthScreen extends React.Component {
           {/* QC Image */}
           <View style={styles.imageContainer}>
             <Image
-              source={require('../../assets/QuantumCheckersIcon_Black.png')}
+              source={require('../../assets/QuantumCheckersIcon_White.png')}
               style={styles.image}
             />
           </View>

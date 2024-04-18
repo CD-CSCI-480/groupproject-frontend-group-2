@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import LevelButton from '../components/LevelButton'; // Import the NavigateButton component
 import MainMenu from './mainmenu';
 import NavigateButton from '../components/NavigateButton'; // Import the NavigateButton component
@@ -7,9 +7,9 @@ import NavigateButton from '../components/NavigateButton'; // Import the Navigat
 class LevelSelectScreen extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container}> 
 
-         {/* Title */}          
+         {/* Title */}
          <View style={styles.textContainer}>
             <View style={styles.textInnerContainer}>
                <Text style={styles.text}>

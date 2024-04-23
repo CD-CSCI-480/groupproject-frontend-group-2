@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
-import { Link } from 'expo-router';
-import Button from '../components/Button';
+import { StyleSheet, View, Text, Image, ImageBackground } from 'react-native';
 import NavigateButton from '../components/NavigateButton'; // Import the NavigateButton component
 import QuantumCheckersTitle from '../components/QuantumCheckersTitle';
 
@@ -21,7 +19,7 @@ class AuthScreen extends React.Component {
           {/* QC Image */}
           <View style={styles.imageContainer}>
             <Image
-              source={require('../../assets/QuantumCheckersIcon_Black.png')}
+              source={require('../../assets/QuantumCheckersIcon_White.png')}
               style={styles.image}
             />
           </View>
@@ -30,11 +28,17 @@ class AuthScreen extends React.Component {
           <View style={styles.buttonContainer}>
               {/* Log In Button */}
               <View style={styles.button}>
-                <NavigateButton destination="LogInScreen" buttonText="Log In" />
+                <NavigateButton destination="LoginScreen" buttonText="Log In" />
               </View>
+
+              {/* Text */}
+              <Text style={styles.signupText}>
+                Don't have an account?
+              </Text>
+
               {/* Sign Up Button */}
               <View style={styles.button}>
-                <NavigateButton destination="SignUpScreen" buttonText="Sign Up" />
+                <NavigateButton destination="SignupScreen" buttonText="Sign Up" />
               </View>
           </View>
         </View>
@@ -74,6 +78,12 @@ const styles = StyleSheet.create({
   },
   button: {
     margin: 20,
+  },
+  signupText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18,
+    paddingTop: 15,
   },
 })
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
 import NavigateButton from '../components/NavigateButton'; // Import the NavigateButton component
 import QuantumCheckersTitle from '../components/QuantumCheckersTitle';
+import LevelSelectScreen from './levelselectscreen'; // Import the LevelSelectScreen component
 
 class MainMenu extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class MainMenu extends React.Component {
           {/* QC Image */}
           <View style={styles.imageContainer}>
             <Image
-              source={require('../../assets/QuantumCheckersIcon_Black.png')}
+              source={require('../../assets/QuantumCheckersIcon_White.png')}
               style={styles.image}
             />
           </View>
@@ -26,13 +27,11 @@ class MainMenu extends React.Component {
           <View style={styles.buttons}>
             {/* Start Game Button */}
             <View style={styles.button}>
-              <View style={styles.button}>
-                <NavigateButton destination="StartGame" buttonText="Start Game" />
-              </View>
+              <NavigateButton destination="StartGame" buttonText="Start Game" />
             </View>
             {/* Level Select Button */}
             <View style={styles.button}>
-                <NavigateButton destination="LevelSelect" buttonText="Level Select" />
+                <NavigateButton destination={LevelSelectScreen} buttonText="Level Select" />
             </View>
           </View>
         </View>
